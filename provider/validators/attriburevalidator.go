@@ -9,7 +9,7 @@ import (
 
 func IsDomain() validator.String {
 	return stringvalidator.RegexMatches(
-		regexp.MustCompile(`^((([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]))$`),
+		regexp.MustCompile(`^((?:(?:\b(?:a-zA-Z0-9?\.)+[a-zA-Z]{2,}\b)|(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}))(?::\d{1,5})?)$`),
 		"Invalid domain",
 	)
 }
